@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Intro from "./components/Intro";
-import Info from "./components/Info";
-import Checking from "./components/Checking";
+import {useSelector, useDispatch} from "react-redux";
+import {setActiveTab} from "./actions";
+import {tabs} from "./reducers/activeTabReducer";
 
 const Root = styled.div`
   display: grid;
@@ -45,23 +45,9 @@ const TabGroup = styled.div`
   padding: 50px 50px 50px 50px;
 `;
 
-const IntroOb = {
-    key: 'Intro',
-    element: <Intro/>
-}
-const InfoOb = {
-    key: 'Info',
-    element: <Info/>
-}
-const CheckingOb = {
-    key: 'Checking',
-    element: <Checking/>
-}
-
-const tabs = [IntroOb, InfoOb, CheckingOb]
-
 function App() {
-    const [active, setActive] = useState(tabs[0])
+    const activeTab = useSelector(state => state.activeTab)
+    const dispatch = useDispatch()
 
     return (
         <Root>
@@ -70,12 +56,12 @@ function App() {
                     return (
                         <Tab
                             key={tab.key}
-                            active={active === tab}
-                            onClick={() => setActive(tab)}
+                            active={activeTab === tab}
+                            onClick={() => dispatch(setActiveTab(tab))}
                         />)
                 })
                 }
-                {active.element}
+                {activeTab.element}
             </TabGroup>
 
             <Img></Img>
