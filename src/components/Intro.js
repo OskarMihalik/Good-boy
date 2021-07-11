@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Title = styled.text`
-  position: absolute;
+const Title = styled.p`
   width: 552px;
   height: 104px;
   left: 250px;
@@ -22,7 +21,7 @@ const Title = styled.text`
 const Intro = () => {
     return (
         <div>
-            <Title>Vyberte si možnosť, ako chcete pomôcť </Title>
+            <Title>Vyberte si možnosť, ako chcete pomôcť</Title>
         </div>
     );
 };
