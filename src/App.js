@@ -58,7 +58,6 @@ const CheckingOb = {
     element: <Checking/>
 }
 
-
 const tabs = [IntroOb, InfoOb, CheckingOb]
 
 function App() {
@@ -78,6 +77,7 @@ function App() {
                 }
                 {active.element}
             </TabGroup>
+
             <Img></Img>
             <Footer></Footer>
         </Root>

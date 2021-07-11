@@ -20,9 +20,9 @@ const Title = styled.p`
 
 const Intro = () => {
     return (
-        <div>
+        <>
             <Title>Vyberte si možnosť, ako chcete pomôcť</Title>
-        </div>
+        </>
     );
 };
 
