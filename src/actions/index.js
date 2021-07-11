@@ -4,3 +4,10 @@ export const setActiveTab = (activeTabOb) => {
         payload: activeTabOb
     }
 }
+
+export const changeActiveButton = (activeButton)=>{
+    return {
+        type: 'SETACIVEBUTTON',
+        payload: activeButton
+    }
+}

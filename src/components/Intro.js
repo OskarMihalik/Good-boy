@@ -1,28 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Title = styled.p`
-  width: 552px;
-  height: 104px;
-  left: 250px;
-  top: 163px;
-  
-  font-style: normal;
-  font-weight: bold;
-  font-size: 46px;
-  line-height: 52px;
-
-  /* or 113% */
-  letter-spacing: 0.01em;
-
-  color: #000000;
-`
+import {OptionButtonCOntainer, OptionButton, Title, Root} from "../styles/stylesIntro";
+import {useSelector, useDispatch} from "react-redux";
+import {changeActiveButton} from "../actions";
 
 const Intro = () => {
+    const activeButton = useSelector(state => state.activeOptionButton)
+    const dispatch = useDispatch()
+
     return (
-        <>
+        <Root>
             <Title>Vyberte si možnosť, ako chcete pomôcť</Title>
-        </>
+            <OptionButtonCOntainer>
+                <OptionButton
+                    active={activeButton}
+                    onClick={()=> dispatch(changeActiveButton(true))}
+                >
+                    <img src={'../img/wallet.svg'} alt={''}/>
+                </OptionButton>
+                <OptionButton
+                    style={{transform: "rotate(180deg)"}}
+                    active={!activeButton}
+                    onClick={()=> dispatch(changeActiveButton(false))}
+                />
+            </OptionButtonCOntainer>
+        </Root>
     );
 };
 

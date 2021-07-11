@@ -18,11 +18,10 @@ const Footer = styled.div`
 `
 
 const Tab = styled.button`
-  position: static;
+  //position: static;
   width: 20.6px;
   height: 6px;
   left: 48.77px;
-  bottom: 0;
   background: #9F9F9F;
   opacity: 0.36;
   border-radius: 10px;
@@ -37,8 +36,15 @@ const Tab = styled.button`
 
 const TabGroup = styled.div`
   display: flex;
+  flex-direction: row;
   grid-area: tabGrounp;
-  padding: 50px 50px 50px 50px;
+  padding: 50px 50px 0 50px;
 `;
 
-export {Root, Tab, Img, TabGroup, Footer}
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 50px 50px 50px 50px;
+`
+
+export {Root, Tab, Img, TabGroup, Footer, Content}
