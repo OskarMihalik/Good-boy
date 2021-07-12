@@ -1,12 +1,12 @@
 import {activeTabReducer} from "./activeTabReducer";
 import activeOptionButtonReducer from "./optionButtonReducer";
-import shelterListReducer from "./shelterListReducer";
+import shelterReducer from "./shelterReducer";
 import {combineReducers} from "redux";
 
 const allReducers = combineReducers({
     activeTab: activeTabReducer,
     activeOptionButton: activeOptionButtonReducer,
-    shelterList: shelterListReducer,
+    shelter: shelterReducer,
 })
 
 export default allReducers

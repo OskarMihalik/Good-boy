@@ -2,14 +2,14 @@ import React, {useEffect} from 'react';
 import Select from 'react-select';
 import {OptionButtonContainer, OptionButton, Title, Root, OptionButtonText, OptionButtonContent, OptionButtonImg, DropDownDiv} from "../styles/stylesIntro";
 import {useSelector, useDispatch} from "react-redux";
-import {changeActiveButton, setShelterList} from "../actions";
+import {changeActiveButton, setShelterList, setSelectedShelterId} from "../actions";
 import walletLogo from '../img/wallet.svg'
 import pawLogo from '../img/paw2.svg'
 
 const Intro = () => {
     const activeButton = useSelector(state => state.activeOptionButton)
     const dispatch = useDispatch()
-    const shelterList = useSelector(state => state.shelterList)
+    const shelter = useSelector(state => state.shelter)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,6 +20,7 @@ const Intro = () => {
             dispatch(setShelterList(data.shelters))
         });
     }, [dispatch]);
+
 
     return (
         <Root>
@@ -50,9 +51,8 @@ const Intro = () => {
                 </OptionButton>
             </OptionButtonContainer>
             <DropDownDiv>
-                <Select options={shelterList} getOptionLabel={(data)=>data.name} isDisabled={!activeButton}/>
+                <Select onChange={(e)=>dispatch(setSelectedShelterId(e.id))} options={shelter.shelterList} getOptionValue={id=>id} getOptionLabel={(data)=>data.name} isDisabled={!activeButton}/>
             </DropDownDiv>
-
         </Root>
     );
 };

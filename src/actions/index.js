@@ -18,3 +18,10 @@ export const setShelterList = (list) => {
         payload: list
     }
 }
+
+export const setSelectedShelterId = (newId) => {
+    return {
+        type: 'SETSELECTEDSHELTERID',
+        payload: newId
+    }
+}
