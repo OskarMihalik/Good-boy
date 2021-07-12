@@ -6,14 +6,14 @@ const Root = styled.div`
   position: center;
 `
 
-const OptionButtonCOntainer = styled.div`
+const OptionButtonContainer = styled.div`
   display: flex;
   position: center;
 `
 
 const OptionButton = styled.button`
-  height: 200px;
-  width: 200px;
+  //height: 200px;
+  //width: 200px;
   background: #FAF9F9;
   border: 1px solid #CD8B65;
   box-sizing: border-box;
@@ -27,10 +27,35 @@ box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 
   `}
 `
 
+const OptionButtonContent = styled.div`
+  display: grid;
+  grid-template-areas: "img nothing"
+                        "text text";
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 80% 20%;
+  padding: 20px 20px 20px 20px;
+`
+
+const OptionButtonText = styled.p`
+  grid-area: text;
+  text-align: left;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+  ${({active}) =>
+          active &&
+          `
+      color: #585757;
+  `}
+`
+
+const OptionButtonImg = styled.div`
+  grid-area: img;
+`
+
 const Title = styled.p`
-  width: 552px;
-  height: 104px;
-  
   font-style: normal;
   font-weight: bold;
   font-size: 46px;
@@ -42,4 +67,4 @@ const Title = styled.p`
   color: #000000;
 `
 
-export {OptionButtonCOntainer, OptionButton, Title, Root}
+export {OptionButtonContainer, OptionButton, Title, Root, OptionButtonContent, OptionButtonText, OptionButtonImg}
