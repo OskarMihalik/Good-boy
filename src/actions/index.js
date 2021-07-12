@@ -11,3 +11,10 @@ export const changeActiveButton = (activeButton)=>{
         payload: activeButton
     }
 }
+
+export const setShelterList = (list) => {
+    return {
+        type: 'SETSHELTERLIST',
+        payload: list
+    }
+}

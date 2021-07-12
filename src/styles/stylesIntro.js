@@ -37,6 +37,7 @@ const OptionButtonContent = styled.div`
 `
 
 const OptionButtonText = styled.p`
+  max-width: 500px;
   grid-area: text;
   text-align: left;
   font-style: normal;
@@ -53,6 +54,14 @@ const OptionButtonText = styled.p`
 
 const OptionButtonImg = styled.div`
   grid-area: img;
+  img {
+    width: 80px;
+    height: 80px;
+  }
+`
+
+const DropDownDiv = styled.div`
+  padding: 20px 0 20px 0;
 `
 
 const Title = styled.p`
@@ -67,4 +76,4 @@ const Title = styled.p`
   color: #000000;
 `
 
-export {OptionButtonContainer, OptionButton, Title, Root, OptionButtonContent, OptionButtonText, OptionButtonImg}
+export {OptionButtonContainer, OptionButton, Title, Root, OptionButtonContent, OptionButtonText, OptionButtonImg, DropDownDiv}

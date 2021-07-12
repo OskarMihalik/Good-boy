@@ -1,13 +1,25 @@
-import React from 'react';
-import {OptionButtonContainer, OptionButton, Title, Root, OptionButtonText, OptionButtonContent, OptionButtonImg} from "../styles/stylesIntro";
+import React, {useEffect} from 'react';
+import Select from 'react-select';
+import {OptionButtonContainer, OptionButton, Title, Root, OptionButtonText, OptionButtonContent, OptionButtonImg, DropDownDiv} from "../styles/stylesIntro";
 import {useSelector, useDispatch} from "react-redux";
-import {changeActiveButton} from "../actions";
+import {changeActiveButton, setShelterList} from "../actions";
 import walletLogo from '../img/wallet.svg'
 import pawLogo from '../img/paw2.svg'
 
 const Intro = () => {
     const activeButton = useSelector(state => state.activeOptionButton)
     const dispatch = useDispatch()
+    const shelterList = useSelector(state => state.shelterList)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch('https://frontend-assignment-api.goodrequest.com/api/v1/shelters');
+            return await response.json();
+        };
+        fetchData().then((data)=>{
+            dispatch(setShelterList(data.shelters))
+        });
+    }, [dispatch]);
 
     return (
         <Root>
@@ -37,7 +49,9 @@ const Intro = () => {
                     </OptionButtonContent>
                 </OptionButton>
             </OptionButtonContainer>
-
+            <DropDownDiv>
+                <Select options={shelterList} getOptionLabel={(data)=>data.name} isDisabled={!activeButton}/>
+            </DropDownDiv>
 
         </Root>
     );
