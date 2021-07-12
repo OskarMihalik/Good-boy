@@ -21,7 +21,7 @@ const Intro = () => {
                         <OptionButtonImg>
                             <img src={walletLogo} alt={''}/>
                         </OptionButtonImg>
-                        <OptionButtonText active={!activeButton}></OptionButtonText>
+                        <OptionButtonText active={!activeButton}>Chcem finančne prispieť celej nadácii</OptionButtonText>
                     </OptionButtonContent>
                 </OptionButton>
                 <OptionButton
