@@ -25,7 +25,6 @@ function App() {
                 {activeTab.element}
             </Content>
 
-
             <Img></Img>
             <Footer></Footer>
         </Root>

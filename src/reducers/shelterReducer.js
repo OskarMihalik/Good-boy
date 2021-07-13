@@ -1,10 +1,49 @@
+const buttons = [
+    {
+        money: 5,
+        // active: false,
+        input: false
+    },
+    {
+        money: 10,
+        // active: false,
+        input: false
+    },
+    {
+        money: 20,
+        // active: false,
+        input: false
+    },
+    {
+        money: 30,
+        // active: false,
+        input: false
+    },
+    {
+        money: 50,
+        // active: false,
+        input: false
+    },
+    {
+        money: 100,
+        // active: false,
+        input: false
+    },
+    {
+        money: '',
+        // active: false,
+        input: true
+    }]
+
 const initialState = {
     selectedShelterId: 0,
-    shelterList: []
+    shelterList: [],
+    moneyButtonChosenIndex: -1,
+    moneyButtons: buttons
 }
 
-const shelterReducer = (state = initialState, action)=>{
-    switch (action.type){
+const shelterReducer = (state = initialState, action) => {
+    switch (action.type) {
         case 'SETSHELTERLIST':
             return {
                 ...state,
@@ -12,12 +51,19 @@ const shelterReducer = (state = initialState, action)=>{
             }
         case 'SETSELECTEDSHELTERID':
             return {
+                ...state,
                 selectedShelterId: action.payload,
-                shelterList: state.shelterList
             }
+        case 'SETMONEYBUTTONCHOSENINDEX':
+            return {
+                ...state,
+                moneyButtonChosenIndex: action.payload
+            }
+        case 'SETSHELTER':
+            return action.payload
         default:
             return state
     }
 }
 
-export  default shelterReducer
+export default shelterReducer

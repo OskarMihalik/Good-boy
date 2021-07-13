@@ -6,22 +6,22 @@ const Root = styled.div`
                         "footer footer";
   grid-template-columns: 70% 30%;
   grid-template-rows: 80% 20%;
-  height: 100vh;
+  height: 120vh;
 `
+
 const Img = styled.div`
   grid-area: img;
   background: blanchedalmond;
 `
+
 const Footer = styled.div`
   grid-area: footer;
   background: aqua;
 `
 
 const Tab = styled.button`
-  //position: static;
   width: 20.6px;
   height: 6px;
-  left: 48.77px;
   background: #9F9F9F;
   opacity: 0.36;
   border-radius: 10px;
@@ -38,12 +38,16 @@ const TabGroup = styled.div`
   display: flex;
   flex-direction: row;
   grid-area: tabGrounp;
-  padding: 50px 50px 0 50px;
+  padding: 50px 50px 0 0;
+  align-self: flex-start;
+  max-width: 300px;
 `;
 
 const Content = styled.div`
   display: flex;
+  flex-grow: 0;
   flex-direction: column;
+  align-items: center;
   padding: 50px 50px 50px 50px;
 `
 

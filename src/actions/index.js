@@ -25,3 +25,17 @@ export const setSelectedShelterId = (newId) => {
         payload: newId
     }
 }
+
+export const setMoneyButtonChosenIndex = (newIndex)=>{
+    return {
+        type: 'SETMONEYBUTTONCHOSENINDEX',
+        payload: newIndex
+    }
+}
+
+export const setShelter = (shelter)=>{
+    return {
+        type: 'SETSHELTER',
+        payload: shelter
+    }
+}
