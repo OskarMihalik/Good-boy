@@ -16,11 +16,23 @@ const CheckingOb = {
 }
 
 const tabs = [IntroOb, InfoOb, CheckingOb]
+const initialOb = {
+    tabsIndex: 0,
+    tabs: tabs,
+}
 
-const activeTabReducer = (state = tabs[0], action)=>{
+const activeTabReducer = (state = initialOb, action)=>{
     switch (action.type){
-        case 'SETACTIVETAB':
-            return action.payload
+        case 'NEXTTAB':
+            return {
+                ...state,
+                tabsIndex: state.tabsIndex + 1
+            }
+        case 'PREVIOUSTAB':
+            return {
+                ...state,
+                tabsIndex: state.tabsIndex - 1
+            }
         default:
             return state
     }

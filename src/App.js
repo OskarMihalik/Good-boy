@@ -1,7 +1,5 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {setActiveTab} from "./actions";
-import {tabs} from "./reducers/activeTabReducer";
 import {Root, Img, Tab, TabGroup, Footer, Content} from "./styles/styles";
 
 function App() {
@@ -12,17 +10,16 @@ function App() {
         <Root>
             <Content>
                 <TabGroup>
-                    {tabs.map((tab) => {
+                    {activeTab.tabs.map((tab) => {
                         return (
                             <Tab
                                 key={tab.key}
-                                active={activeTab === tab}
-                                onClick={() => dispatch(setActiveTab(tab))}
+                                active={activeTab.tabs[activeTab.tabsIndex] === tab}
                             />)
                     })
                     }
                 </TabGroup>
-                {activeTab.element}
+                {activeTab.tabs[activeTab.tabsIndex].element}
             </Content>
 
             <Img></Img>

@@ -20,7 +20,7 @@ import {
     setShelterList,
     setSelectedShelterId,
     setMoneyButtonChosenIndex,
-    setShelter
+    setShelter, nextTab
 } from "../actions";
 import walletLogo from '../img/wallet.svg'
 import pawLogo from '../img/paw2.svg'
@@ -51,9 +51,7 @@ const Intro = () => {
     }
 
     const canContinue =() =>{
-        if (shelter){
-
-        }
+        return (shelter.moneyButtonChosenIndex > -1) && (parseInt((shelter.moneyButtons[shelter.moneyButtonChosenIndex].money)) > 0);
     }
 
     return (
@@ -68,8 +66,9 @@ const Intro = () => {
                         <OptionButtonImg>
                             <img src={walletLogo} alt={''}/>
                         </OptionButtonImg>
-                        <OptionButtonText active={!activeButton}>Chcem finančne prispieť konkrétnemu
-                            útulku</OptionButtonText>
+                        <OptionButtonText active={!activeButton}>
+                            Chcem finančne prispieť konkrétnemu útulku
+                        </OptionButtonText>
                     </OptionButtonContent>
                 </OptionButton>
                 <OptionButton
@@ -117,7 +116,13 @@ const Intro = () => {
                     )
                 })}
             </MoneyChooseContainer>
-            <ContinueButton disabled={true}>
+            <ContinueButton
+                active={!canContinue()}
+                disabled={!canContinue()}
+                onClick={()=>{
+                    dispatch(nextTab())
+                }}
+            >
                 <p>
                     Pokračovať
                 </p>

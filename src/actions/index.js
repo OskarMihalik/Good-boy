@@ -39,3 +39,15 @@ export const setShelter = (shelter)=>{
         payload: shelter
     }
 }
+
+export const nextTab = ()=>{
+    return{
+        type: 'NEXTTAB'
+    }
+}
+
+export const previousTab = ()=>{
+    return{
+        type: 'PREVIOUSTAB'
+    }
+}
