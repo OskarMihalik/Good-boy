@@ -65,3 +65,23 @@ export const InputBoxError = styled.p`
 export const PhoneNumberWrapper = styled.div`
   margin: 0 15px 15px 15px;
 `
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+`
+
+export const PreviousButton = styled.button`
+  padding: 20px 24px;
+  align-self: flex-start;
+  width: 81px;
+  height: 59px;
+  background: #F3E2D9;
+  border-radius: 100px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  color: #2F2F2F;
+`

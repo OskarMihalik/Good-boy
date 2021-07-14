@@ -1,11 +1,12 @@
 import React from 'react';
 import {Formik, Form, Field, ErrorMessage, useFormik} from 'formik';
 import {Title, Root, ContinueButton} from "../styles/stylesIntro";
-import {FormContent, InputBox, InputBoxError, PhoneNumberWrapper} from "../styles/stylesInfo";
+import {FormContent, InputBox, InputBoxError, PhoneNumberWrapper, ButtonContainer, PreviousButton} from "../styles/stylesInfo";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { css } from 'styled-components';
 import {useSelector, useDispatch} from "react-redux";
+import {previousTab} from "../actions";
 import {nextTab, setUserInformation} from "../actions";
 const phoneInputInputCSS = css`
   color: red;
@@ -116,10 +117,16 @@ const Info = () => {
                                 </PhoneNumberWrapper>
                             </InputBox>
                             {formik.errors.phoneNumber ? <InputBoxError>{formik.errors.phoneNumber}</InputBoxError> : null}
+                            <ButtonContainer>
+                                <PreviousButton onClick={()=>dispatch(previousTab())}>
+                                    Späť
+                                </PreviousButton>
+                                <ContinueButton type={'submit'}>
+                                    Pokračovať
+                                </ContinueButton>
 
-                            <ContinueButton type={'submit'} onClick={()=>console.log(formik.touched)}>
-                                Pokračovať
-                            </ContinueButton>
+                            </ButtonContainer>
+
                         </FormContent>
                     </form>
         </Root>
