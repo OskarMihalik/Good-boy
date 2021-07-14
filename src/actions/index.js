@@ -58,3 +58,10 @@ export const setUserInformation = (userInformation)=>{
         payload: userInformation
     }
 }
+
+export const setAgreeWithPersonalInformation = (value)=>{
+    return{
+        type: 'SETAGREEWITHPERSONALINFORMATION',
+        payload: value
+    }
+}

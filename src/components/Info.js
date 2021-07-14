@@ -1,13 +1,14 @@
 import React from 'react';
-import {Formik, Form, Field, ErrorMessage, useFormik} from 'formik';
+import {useFormik} from 'formik';
 import {Title, Root, ContinueButton} from "../styles/stylesIntro";
 import {FormContent, InputBox, InputBoxError, PhoneNumberWrapper, ButtonContainer, PreviousButton} from "../styles/stylesInfo";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { css } from 'styled-components';
-import {useSelector, useDispatch} from "react-redux";
-import {previousTab} from "../actions";
-import {nextTab, setUserInformation} from "../actions";
+import {useDispatch, useSelector} from "react-redux";
+import {nextTab, setUserInformation, previousTab} from "../actions";
+import userInformation from "../reducers/userInformation";
+
 const phoneInputInputCSS = css`
   color: red;
 `
@@ -41,6 +42,8 @@ const validate = values => {
 const Info = () => {
     const extractPhoneInputInputCSS = phoneInputInputCSS.toString()
     const dispatch = useDispatch()
+    const userInformation = useSelector(state=>state.userInformation)
+
     const customOnChange = (e, fieldStr)=>{
         formik.setFieldValue(fieldStr, e.target.value)
         formik.setFieldTouched(fieldStr, true, true)
@@ -49,10 +52,10 @@ const Info = () => {
 
     const formik =useFormik({
         initialValues: {
-            firstName: '',
-            lastName: '',
-            email: '',
-            phoneNumber: '',
+            firstName: userInformation.firstName,
+            lastName: userInformation.lastName,
+            email: userInformation.email,
+            phoneNumber: userInformation.phoneNumber,
         },
         validate,
         onSubmit: (values) => {

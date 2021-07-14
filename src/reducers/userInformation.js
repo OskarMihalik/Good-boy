@@ -3,6 +3,7 @@ const initialState = {
     lastName: '',
     email: '',
     phoneNumber: '',
+    agreeWithPersonalInformation: false
 }
 
 const userInformationReducer = (state = initialState, action)=>{
@@ -29,6 +30,11 @@ const userInformationReducer = (state = initialState, action)=>{
             }
         case 'SETUSERINFORMATION':
             return action.payload
+        case 'SETAGREEWITHPERSONALINFORMATION':
+            return {
+                ...state,
+                agreeWithPersonalInformation: action.payload
+            }
         default:
             return state
     }

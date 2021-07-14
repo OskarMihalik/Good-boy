@@ -34,21 +34,23 @@ const Tab = styled.button`
   `}
 `;
 
+
 const TabGroup = styled.div`
   display: flex;
   flex-direction: row;
   grid-area: tabGrounp;
   padding: 50px 50px 0 0;
-  align-self: flex-start;
+  align-self: center;
   max-width: 300px;
 `;
 
 const Content = styled.div`
   display: flex;
-  flex-grow: 0;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   padding: 50px 50px 50px 50px;
+  //width: 75%;
 `
 
 export {Root, Tab, Img, TabGroup, Footer, Content}
