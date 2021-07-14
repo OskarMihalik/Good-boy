@@ -7,6 +7,11 @@ const Root = styled.div`
   grid-template-columns: 70% 30%;
   grid-template-rows: 80% 20%;
   height: 120vh;
+  @media (max-width: 800px) {
+    grid-template-areas: "tabGrounp"
+                        "footer";
+    grid-template-columns: 100%;
+  }
 `
 
 const Img = styled.div`
@@ -42,7 +47,7 @@ const TabGroup = styled.div`
   grid-area: tabGrounp;
   padding: 50px 50px 0 0;
   align-self: center;
-  max-width: 300px;
+  //max-width: 300px;
 `;
 
 const Content = styled.div`
@@ -50,7 +55,7 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: center;
-  padding: 50px 50px 50px 50px;
+  //padding: 50px 50px 50px 50px;
 `
 
 export {Root, Tab, Img, TabGroup, FooterContainer, Content}
