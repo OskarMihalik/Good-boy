@@ -29,6 +29,7 @@ const Checking = () => {
         if (response.status === 200){
             const data = await response.json()
             console.log(data)
+            alert('Údaje boli poslané')
         }else{
             alert('Nepodarilo sa poslať údaje')
         }
