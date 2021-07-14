@@ -7,13 +7,20 @@ export const FormContent = styled.div`
 
 export const InputBox = styled.div`
   background: #FFFFFF;
-  border: 1px solid #CD8B65;
+  border: 1px solid #DFDFDF;
   box-sizing: border-box;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 
+  ${({active}) =>
+          active &&
+          `
+    border: 1px solid #DFDFDF; 
+    border: 1px solid #CD8B65;  
+  `}
+  
   input {
     border: none;
     font-style: normal;
@@ -53,4 +60,8 @@ export const InputBoxError = styled.p`
   font-size: 14px;
   line-height: 19px;
   margin: 0 0 10px 0 ;
+`
+
+export const PhoneNumberWrapper = styled.div`
+  margin: 0 15px 15px 15px;
 `
