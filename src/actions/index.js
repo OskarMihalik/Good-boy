@@ -51,3 +51,10 @@ export const previousTab = ()=>{
         type: 'PREVIOUSTAB'
     }
 }
+
+export const setUserInformation = (userInformation)=>{
+    return {
+        type: 'SETUSERINFORMATION',
+        payload: userInformation
+    }
+}

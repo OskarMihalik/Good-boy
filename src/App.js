@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {Root, Img, Tab, TabGroup, Footer, Content} from "./styles/styles";
+import {setActiveTab} from "./actions";
 
 function App() {
     const activeTab = useSelector(state => state.activeTab)
