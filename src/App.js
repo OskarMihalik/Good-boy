@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {Root, Img, Tab, TabGroup, Footer, Content} from "./styles/styles";
+import {Root, Img, Tab, TabGroup, FooterContainer, Content} from "./styles/styles";
+import dog from './img/dog.png'
 
 function App() {
     const activeTab = useSelector(state => state.activeTab)
@@ -23,8 +24,12 @@ function App() {
                 {activeTab.tabs[activeTab.tabsIndex].element}
             </Content>
 
-            <Img></Img>
-            <Footer></Footer>
+            <Img>
+                <img src={dog} alt={''}/>
+            </Img>
+            <FooterContainer>
+                
+            </FooterContainer>
         </Root>
 
     );

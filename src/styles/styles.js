@@ -11,10 +11,11 @@ const Root = styled.div`
 
 const Img = styled.div`
   grid-area: img;
-  background: blanchedalmond;
+  align-content: center;
+  padding: 40px 40px 40px 40px;
 `
 
-const Footer = styled.div`
+const FooterContainer = styled.div`
   grid-area: footer;
   background: aqua;
 `
@@ -50,7 +51,6 @@ const Content = styled.div`
   align-items: center;
   align-self: center;
   padding: 50px 50px 50px 50px;
-  //width: 75%;
 `
 
-export {Root, Tab, Img, TabGroup, Footer, Content}
+export {Root, Tab, Img, TabGroup, FooterContainer, Content}
