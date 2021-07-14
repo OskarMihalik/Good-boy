@@ -2,6 +2,7 @@ import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {Root, Img, Tab, TabGroup, FooterContainer, Content} from "./styles/styles";
 import dog from './img/dog.png'
+import Footer from "./components/Footer";
 
 function App() {
     const activeTab = useSelector(state => state.activeTab)
@@ -28,7 +29,7 @@ function App() {
                 <img src={dog} alt={''}/>
             </Img>
             <FooterContainer>
-                
+                <Footer/>
             </FooterContainer>
         </Root>
 

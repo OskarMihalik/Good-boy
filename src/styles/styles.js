@@ -17,7 +17,8 @@ const Img = styled.div`
 
 const FooterContainer = styled.div`
   grid-area: footer;
-  background: aqua;
+  align-content: center;
+  //background: aqua;
 `
 
 const Tab = styled.button`
@@ -34,7 +35,6 @@ const Tab = styled.button`
     opacity: 1;
   `}
 `;
-
 
 const TabGroup = styled.div`
   display: flex;
