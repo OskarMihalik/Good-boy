@@ -12,7 +12,10 @@ import {
     MoneyChooseContainer,
     MoneyButton,
     MoneyChooserFlex,
-    ContinueButton
+    ContinueButton,
+    AdditionalInfoContainer,
+    AdditionalInfoLeft,
+    NotNecessaryText
 } from "../styles/stylesIntro";
 import {useSelector, useDispatch} from "react-redux";
 import {
@@ -84,10 +87,19 @@ const Intro = () => {
                     </OptionButtonContent>
                 </OptionButton>
             </OptionButtonContainer>
+            <AdditionalInfoContainer>
+                <AdditionalInfoLeft>O projekte</AdditionalInfoLeft>
+                <NotNecessaryText>Nepovinné</NotNecessaryText>
+            </AdditionalInfoContainer>
             <DropDownDiv>
                 <Select onChange={(e) => dispatch(setSelectedShelterId(e.id))} options={shelter.shelterList}
-                        getOptionValue={id => id} getOptionLabel={(data) => data.name} isDisabled={!activeButton}/>
+                        getOptionValue={id => id} getOptionLabel={(data) => data.name} isDisabled={!activeButton}
+                        placeholder={'Vyberte útulok zo zoznamu'}
+                />
             </DropDownDiv>
+            <AdditionalInfoContainer>
+                <AdditionalInfoLeft>Suma, ktorou chcem prispieť</AdditionalInfoLeft>
+            </AdditionalInfoContainer>
             <MoneyChooseContainer>
                 {shelter.moneyButtons.map((button, index) => {
                     return (
