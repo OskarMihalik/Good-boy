@@ -16,8 +16,13 @@ const Root = styled.div`
 
 const Img = styled.div`
   grid-area: img;
-  align-content: center;
-  padding: 40px 40px 40px 40px;
+  display: flex;
+  justify-content: center;
+  img{
+    display: block;
+    margin: auto;
+    width: 85%;
+  }
 `
 
 const FooterContainer = styled.div`
@@ -55,6 +60,7 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: center;
+  margin: 0 10px 0 10px;
   //padding: 50px 50px 50px 50px;
 `
 
